@@ -1,0 +1,139 @@
+/* 基础样式  */
+*{padding:0;margin: 0;font-family: "微软雅黑"，"黑体","宋体";font-size: 14px;color: #333;}
+a{text-decoration: none;}
+ul,ol{list-style: none;}
+img{border: none;}
+input,textarea{outline: none;}
+/* body{background: #aaa;} */
+/* filter: grayscale(100%);网站整体变为灰色  兼容*/
+/* -webkit-filter: grayscale(100%);filter: grayscale(100%); */
+
+
+/* 公共样式 */
+.pubCon{width: 1200px;margin: 0 auto;}
+.pubTit{text-align: center;padding-bottom: 60px;}
+.pubTit h2{font-size: 32px;font-weight: 400;line-height: 1.6em;}
+.pubTit .line{width: 50px;height: 2px;background: #00abd9;display: inline-block;margin-top: 10px;}
+/* 头部 */
+.header{height: 60px;width: 100%;background: rgb(255, 255, 255,0.6);
+/* 定位器 */
+position: fixed;top: 0;left: 0;z-index: 10;
+}
+/* 单独样式 */
+.hdCon{height:100%;display: flex;justify-content: space-between;align-items: center;}
+
+.hdNav ul{display: flex;height:60px;}
+
+.hdNav li a{display: block;font-size: 18px;padding: 0 30px;
+    transition: 0.3s;position: relative;line-height: 60px;}
+.hdNav li:hover a{color: #00abd9;}
+/* 添加小圆点 */
+.hdNav li a::after{display: block;content: "";width: 6px;
+    height: 6px;background: #00abd9;border-radius: 50%;opacity: 0;
+    position: absolute;bottom: 6px;
+    left: 50%;margin-left: -3px;/* 或*/
+    /* left: calc(50%-10px); */
+}
+.hdNav li:hover a::after{opacity: 1;}
+
+/* 轮播图 */
+.banner{height: 500px;}
+.banner a{display: block;height: 500px;background:no-repeat center;cursor: move;}/*不重复 居中  cursor: pointer鼠标位于轮播图上的显示形式*/
+.banner a.small{display: none;}/*只显示一张*/
+/* 修改swiper的默认样式 */
+.banner .swiper-pagination-bullet{
+    background: white;
+}
+
+/* 服务区 */
+.service{padding: 90px 0 50px;background: white;}
+.serCon{display: flex;text-align: center;}
+.serCon .box{display: block;height: 380px;
+    padding: 0 30px;box-sizing: border-box;}/*box-sizing: border-box;内填充*/
+.serCon .boxIcon{width: 200px;height: 200px;border: 1px solid #00abd9;
+    border-radius: 50%;margin: 0 auto;line-height: 200px;transition: 0.3s;}
+.serCon .boxIcon .iconfont{font-size:90px; color: #00abd9;transition: 0.3s;}
+.serCon h3{padding: 50px 0 25px;font-size: 22px;font-weight: 400;}
+.serCon p{line-height: 1.8em;color: 666;}
+
+.serCon .box:hover h3{color: #00abd9;}
+.serCon .box:hover .boxIcon{background:#00abd9;}
+.serCon .box:hover .boxIcon .iconfont{color: #fff;}
+
+/* 关于 */
+.about{padding: 90px 0;background: url(../images/pexels.jpg) no-repeat center fixed;}
+.abtTit h2{color: white;}
+.abtTit .line{background: white;}
+.abtText{font-size: 18px;color: #fff;line-height: 2em;text-align: center;opacity: 0.8;
+padding: 0 70px;}
+.btnGroup{width: 100%;text-align: center;font-size: 0;padding-top: 100px;}
+/* .btnGroup .btn{display: inline-block;width: 150px;height: 50px;
+    background:linear-gradient(to right,#f67b1f,#ef2d58);color: #fff;
+border-radius: 5px;line-height: 50px;font-size: 20px;margin: 0 10px;} */
+/* .btnGroup .btnRight{background:linear-gradient(to right,#0fcfd7,#5960ff);} 兼容模式*/
+.btnGroup .btn{display: inline-block;width: 150px;height: 50px;
+    background:-webkit-gradient(linear,left top, right top,from(#f67b1f),to(#ef2d58));
+    background:-o-linear-gradient(left,#f67b1f,#ef2d58);
+    background:linear-gradient(to right,#f67b1f,#ef2d58);color: #fff;
+border-radius: 5px;line-height: 50px;font-size: 20px;margin: 0 10px;transition: 0.3s;}
+.btnGroup .btnRight{background:-webkit-gradient(linear,left top, right top,
+    from(#0fcfd7),to(#5960ff));
+    background:-o-linear-gradient(left,#0fcfd7,#5960ff);
+    background:linear-gradient(to right,#0fcfd7,#5960ff);}
+.btnGroup .btn:hover{opacity: 1;transform: scale(1.05);}/*改变透明度，放大  动画：animation css*/
+
+.case{padding: 90px 0;}
+.caseCon{display: flex;justify-content: space-between;flex-wrap: wrap;}/*弹性盒子*/
+.caseCon .box{display: block;width: 32%;margin-bottom: 30px;position: relative;
+perspective: 600px;/*视距：近大远小*/
+overflow: hidden;
+}
+.caseCon .pic{width: 100%;display: block;}
+.caseCon .ceng{display: block;width: 100%;height: 100%;background: rgb(0, 0, 0,0.8);
+    color: #fff;position: absolute;top: 0;left: 0;display: flex;align-items: center;
+    justify-content: center;padding: 0 30px;box-sizing: border-box;
+    flex-direction: column;/*盒模型 纵向*/
+    transform: rotateX(110deg);/*透视*/
+    transform-origin: bottom;/*旋转方向*/
+    transition: 0.3s;
+}
+.caseCon .ceng h3{color: #fff;font-size: 20px;font-weight: 400;}
+.caseCon .ceng .line{width: 30px;height: 1px;background: white;margin: 10px 0 20px;}
+.caseCon .ceng p{color: #fff;opacity: 0.6;text-align: center;line-height: 1.8em;}
+
+
+/*翻页效果*/
+.caseCon .box:hover .ceng{transform:rotate(0) ;}
+
+/* 底部区域 */
+.clientCon ul{overflow: hidden;}
+.clientCon li{float: left;width: 200px;padding: 10px;box-sizing: border-box;}
+.clientCon li img{width: 100%;}
+
+.footer{margin-top: 90px;background: #f4f4f4;}
+.ftMain{background: #f4f4f4;min-height: 100px;padding-top: 20px;}
+
+.ftLogo{
+    display: inline-block;
+    display: flex;
+}
+.ftLogo img{float: left;}
+.ftLogo .text{float: left;padding-top: 10px;padding-left: 10px;}
+.ftLogo .text h1{font-size: 16px;font-weight: 400;}
+.ftCon{display: flex;justify-content: space-between;padding: 30px 0;}
+.ftCon h4{font-size: 18px;font-weight: 400;padding-bottom: 15px;}
+.ftLink{display: flex;}
+.ftLink .box{padding:0 20px}
+.ftLink a{display: block;line-height: 2em;}
+.ftLink a:hover{color: #00abd9;}
+
+.ftContact h4{color:#00abd9 ;}
+.ftContact p{line-height: 2em;}
+
+.fyEwm{text-align: center;}
+
+.copyright{background: #000;color: rgba(255,255,255,0.3);
+    padding: 10px 0;text-align: center;}
+.copyright span{color: rgba(255,255,255,0.3);}
+.copyright a{color: white;}
+
